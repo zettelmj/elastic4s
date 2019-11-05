@@ -41,8 +41,7 @@ object CanonicalRequest {
 
   private def canonicalUri(httpRequest: HttpRequest): String = {
 
-    val uri = new URIBuilder()
-      .setPath(httpRequest.getRequestLine.getUri)
+    val uri = new URIBuilder(httpRequest.getRequestLine.getUri)
       .build()
       .getPath
 
